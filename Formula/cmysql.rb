@@ -1,5 +1,5 @@
-$version = "2.0.5"
-$hash = "4cb9620fbb68571be11ba13afc8911fd434561b9ff661040a128618af19bbbb5"
+$version = "2.0.6"
+$hash = "09754aa74ba110ff3e062df2dadd58cf9c1f1cf25fa41d47df11a58dbb5bfb7c"
 
 class Cmysql < Formula
   homepage "https://github.com/novi"
@@ -12,7 +12,7 @@ class Cmysql < Formula
 
   def install
     system "mkdir pkgconfig"
-    system "mv macos.pc pkgconfig/cmysql.pc"
+    system "mv macos-#{`uname -m | tr -d '\n'`}.pc pkgconfig/cmysql.pc"
     lib.install "pkgconfig"
   end
 end
